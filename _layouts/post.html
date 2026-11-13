@@ -1,0 +1,147 @@
+---
+layout: default
+---
+
+<article class="post-container">
+  <div class="post-header">
+    <div class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+      {% if page.categories %}
+        <span class="post-categories">
+          {% for category in page.categories %}
+            <span class="category-badge">{{ category }}</span>
+          {% endfor %}
+        </span>
+      {% endif %}
+    </div>
+    <h1 class="post-title">{{ page.title }}</h1>
+    {% if page.subtitle %}
+      <p class="post-subtitle">{{ page.subtitle }}</p>
+    {% endif %}
+  </div>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  <div class="post-footer">
+    <a href="{{ site.baseurl }}/" class="back-link">&larr; Back to articles</a>
+  </div>
+</article>
+
+<style>
+  .post-header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px dashed var(--border);
+  }
+  .post-meta {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .category-badge {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .post-title {
+    font-size: 2.1rem;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.75rem;
+  }
+  .post-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+  .post-content {
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+  .post-content h2 {
+    font-size: 1.45rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border);
+    letter-spacing: -0.02em;
+  }
+  .post-content h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 1.8rem;
+    margin-bottom: 0.6rem;
+  }
+  .post-content p {
+    margin-bottom: 1.4rem;
+  }
+  .post-content ul, .post-content ol {
+    margin-bottom: 1.4rem;
+    padding-left: 1.5rem;
+  }
+  .post-content li {
+    margin-bottom: 0.4rem;
+  }
+  .post-content blockquote {
+    border-left: 3px solid var(--accent);
+    padding: 0.6rem 1.2rem;
+    background: var(--card-bg);
+    border-radius: 0 6px 6px 0;
+    color: var(--text-muted);
+    margin: 1.5rem 0;
+    font-style: italic;
+  }
+  .post-content code {
+    font-family: var(--font-mono);
+    font-size: 0.88em;
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+  }
+  .post-content pre {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    padding: 1.2rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .post-content pre code {
+    background: transparent;
+    border: none;
+    padding: 0;
+    font-size: 0.88rem;
+  }
+  .post-content hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 3rem 0;
+  }
+  .post-footer {
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+  .back-link:hover { text-decoration: underline; }
+</style>

@@ -1,0 +1,18 @@
+title: "Seohun | AI & Systems"
+email: seodev12@gmail.com
+description: "Engineering blog on production AI agents, state management, and autonomous systems architecture."
+baseurl: ""
+url: "https://yosyus-yo.github.io"
+github_username: yosyus-Yo
+author:
+  name: "Seohun"
+  bio: "Founder & AI Engineer at AITHOR. Building autonomous agent systems."
+  avatar: "https://avatars.githubusercontent.com/u/77429611?v=4"
+  github: "https://github.com/yosyus-Yo"
+
+markdown: kramdown
+permalink: /posts/:title/
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
