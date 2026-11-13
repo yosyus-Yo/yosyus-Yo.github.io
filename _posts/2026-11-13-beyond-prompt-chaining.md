@@ -2,7 +2,7 @@
 layout: post
 title: "Beyond Prompt Chaining: Why Production AI Agents Fail at State Management"
 subtitle: "From stateless LLM pipelines to robust event-driven agent architectures: 4 hard-learned lessons from the trenches."
-date: 2026-11-13 18:25:00 +0900
+date: 2026-11-13 18:00:00 +0900
 categories: [Architecture]
 tags: [ai-agent, state-management, production, autonomous-systems]
 ---
