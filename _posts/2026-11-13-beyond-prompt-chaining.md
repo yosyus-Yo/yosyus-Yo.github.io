@@ -73,7 +73,8 @@ When an agent hits a high-risk threshold (e.g., transferring funds or deleting r
 - It must **suspend execution**, serialize its full state graph to cold storage, and emit a review ticket.
 - When the human approves or edits the plan via Slack or email 3 hours later, a worker wakes up, deserializes the state snapshot, verifies precondition invariants, and resumes cleanly.
 
----
+
+<!-- lang:ko -->
 
 # 🇰🇷 한국어 번역 요약 (Korean Summary)
 

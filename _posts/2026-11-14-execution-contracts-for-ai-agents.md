@@ -92,7 +92,8 @@ This achieves two things simultaneously:
 1. The model cannot skip verification because the commit tool is cryptographically locked behind the dry-run output.
 2. If underlying state changes between preview and execution, the hash invalidates automatically, preventing TOCTOU (Time-of-Check to Time-of-Use) race conditions.
 
----
+
+<!-- lang:ko -->
 
 # 🇰🇷 한국어 완역본 (Full Korean Translation)
 

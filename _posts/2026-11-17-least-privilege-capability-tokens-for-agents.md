@@ -78,7 +78,8 @@ By isolating untrusted inputs from write credentials, you eliminate the most com
 
 Autonomy and security are not opposites. When every tool call carries a scoped capability token, passes deterministic argument checks, and runs inside a disposable sandbox, you can give your agent more capable tools—while keeping the worst-case failure strictly bounded.
 
----
+
+<!-- lang:ko -->
 
 # 최소 권한 에이전트 설계: 프로덕션 환경을 위한 역량 토큰(Capability Tokens)과 샌드박스 툴 실행
 

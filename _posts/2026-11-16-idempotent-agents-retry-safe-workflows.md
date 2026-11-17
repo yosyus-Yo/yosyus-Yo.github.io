@@ -94,7 +94,8 @@ When the tool response makes uncertainty explicit and names the exact verificati
 Reliable agents are not built by hoping the network stays up or asking the LLM to be careful. They are built by treating every tool call like a distributed transaction: **idempotency keys** for deduplication, **write-ahead logs** for crash recovery, **saga tiers** for blast-radius control, and **structured ambiguity** so the model never turns a timeout into a duplicate side effect.
 
 ---
----
+
+<!-- lang:ko -->
 
 # [한국어 완역] 멱등한 에이전트 설계하기: 툴 호출이 중간에 실패해도 안전하게 재시도하는 워크플로
 

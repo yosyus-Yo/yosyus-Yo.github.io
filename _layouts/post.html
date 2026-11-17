@@ -20,9 +20,23 @@ layout: default
     {% endif %}
   </div>
 
-  <div class="post-content">
-    {{ content }}
-  </div>
+  {% assign lang_parts = content | split: "<!-- lang:ko -->" %}
+  {% if lang_parts.size > 1 %}
+    <div class="lang-toggle" role="group" aria-label="Language switcher">
+      <button type="button" class="lang-btn active" data-lang="en" onclick="setPostLang('en')">English</button>
+      <button type="button" class="lang-btn" data-lang="ko" onclick="setPostLang('ko')">한국어</button>
+    </div>
+    <div class="post-content lang-panel" data-lang="en">
+      {{ lang_parts[0] }}
+    </div>
+    <div class="post-content lang-panel" data-lang="ko" style="display:none;">
+      {{ lang_parts[1] }}
+    </div>
+  {% else %}
+    <div class="post-content">
+      {{ content }}
+    </div>
+  {% endif %}
 
   <div class="post-footer">
     <a href="{{ site.baseurl }}/" class="back-link">&larr; Back to articles</a>
@@ -144,4 +158,59 @@ layout: default
     font-size: 0.95rem;
   }
   .back-link:hover { text-decoration: underline; }
+  .lang-toggle {
+    display: inline-flex;
+    gap: 0.35rem;
+    padding: 0.25rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    margin-bottom: 2rem;
+  }
+  .lang-btn {
+    appearance: none;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+  .lang-btn:hover {
+    color: var(--text);
+  }
+  .lang-btn.active {
+    background: var(--accent);
+    color: #ffffff;
+  }
 </style>
+
+<script>
+  function setPostLang(lang) {
+    var panels = document.querySelectorAll('.lang-panel');
+    var buttons = document.querySelectorAll('.lang-btn');
+    if (!panels.length) return;
+    panels.forEach(function (el) {
+      el.style.display = el.getAttribute('data-lang') === lang ? '' : 'none';
+    });
+    buttons.forEach(function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    });
+    try {
+      localStorage.setItem('post_lang', lang);
+    } catch (e) {}
+  }
+
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    var qLang = params.get('lang');
+    var saved = null;
+    try { saved = localStorage.getItem('post_lang'); } catch (e) {}
+    var initial = (qLang === 'ko' || qLang === 'en') ? qLang : ((saved === 'ko' || saved === 'en') ? saved : 'en');
+    setPostLang(initial);
+  })();
+</script>

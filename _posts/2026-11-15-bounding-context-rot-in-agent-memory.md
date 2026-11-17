@@ -73,7 +73,8 @@ Never persist raw working memory into long-term storage. Use an explicit **Scrat
 
 Long-running autonomy is not about remembering *everything*. It is about forgetting the right things on schedule so the facts that matter stay unmistakable.
 
----
+
+<!-- lang:ko -->
 
 ## 한국어 완역: 에이전트 메모리는 왜 시간이 지날수록 망가지는가: 컨텍스트 부패와 검색 드리프트 제어하기
 
